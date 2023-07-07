@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 class AppButton extends StatelessWidget {
   AppButton({super.key});
 
-  @override
   final homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class AppButton extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return SizedBox(
       width: width,
-      height: height * 0.2,
+      height: height * 0.15,
       child: Stack(
         children: [
           Visibility(

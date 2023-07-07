@@ -11,11 +11,12 @@ class HomeController extends GetxController {
   RxInt onGoingFor = 0.obs;
   DateTime now = DateTime.now();
   RxDouble precentage = 0.0.obs;
+  Rx<Duration> onGoingForDureation = const Duration(seconds: 0).obs;
 
   @override
   void onInit() async {
     await getDates();
-
+getDifference();
     super.onInit();
   }
 
@@ -23,9 +24,11 @@ class HomeController extends GetxController {
   RxInt reamaingHours = 0.obs;
   getDifference() {
     Duration difference = endDate.value.difference(now);
-
+  
+  
     Duration intialDifference = endDate.value.difference(startDate.value);
     Duration onGoing = now.difference(startDate.value);
+    onGoingForDureation.value = onGoing;
     onGoingFor.value = onGoing.inDays;
     precentage.value =
         (difference.inSeconds.toInt() / intialDifference.inSeconds.toInt());

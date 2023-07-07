@@ -8,12 +8,12 @@ import 'package:lottie/lottie.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../widgets/hold_it.dart';
-import '../widgets/reset_button.dart';
+import '../widgets/app_button.dart';
+import '../widgets/timer.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  @override
   final homeController = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
@@ -97,6 +97,7 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  AppTimer(),
                   HoldIt(),
                   AppButton()
                 ],
